@@ -1,254 +1,149 @@
-:root {
-  /* NEW COLOR PALETTE - Closer to the example, with improved contrast */
-  --primary-color: #2D4059; /* A darker blue for main headers/backgrounds */
-  --secondary-color: #F8F4E3; /* Cream / Off-White - unchanged, good contrast */
-  --accent1-color: #E2C044; /* Golden Yellow for accents - unchanged, good contrast */
-  --accent2-color: #6C7A89; /* A lighter, slightly muted blue for nav/links */
-  --accent3-color: #FFFFFF; /* White - for text on dark backgrounds */
-
-  --heading-font: 'Poppins', sans-serif;
-  --paragraph-font: 'Poppins', sans-serif;
-
-  /* Color variables mapped to the new palette for clarity and contrast */
-  --headline-color: var(--accent3-color); /* White text on dark blue header */
-  --headline-background: var(--primary-color); /* Dark blue for main header */
-  --nav-background: var(--accent2-color); /* Lighter muted blue for nav */
-  --nav-link-color: var(--accent3-color); /* White links on nav background */
-  --section-heading-color: var(--accent3-color); /* White text on card headings */
-  --section-heading-background-card1: var(--primary-color); /* Dark blue for card 1 heading */
-  --section-heading-background-card2: var(--primary-color); /* Dark blue for card 2 heading */
-  --section-heading-background-nigeria: var(--accent2-color); /* Lighter blue for Nigeria heading */
-  --text-color: var(--primary-color); /* Changed for better contrast on light backgrounds */
-  --link-color: var(--primary-color); /* Dark blue for links on white/cream backgrounds */
-  --link-hover-color: var(--accent1-color); /* Golden yellow for link hover */
-  --section-background: var(--secondary-color);
-  --card-background: var(--accent3-color);
-  --footer-color: var(--accent3-color);
-  --footer-background: var(--primary-color);
-  --flag-label-color: var(--primary-color); /* Changed for better contrast */
-}
-
-/* General Styles */
+/* General Page and Font Styles */
 body {
-  font-family: var(--paragraph-font);
-  font-size: 16px;
-  margin: 0;
-  background-color: var(--section-background);
-  color: var(--text-color); 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-h1, h2, h3 {
-  font-family: var(--heading-font);
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: var(--link-color); 
-}
-
-a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
-}
-
-/* Header and Navigation */
+/* Header and Navigation Styles */
 header {
-  text-align: center;
-  background-color: var(--headline-background);
-  color: var(--headline-color);
-  padding: 1rem 0 0;
-  margin-bottom: 20px;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
 }
 
-header h1 {
-  font-size: 1.5rem;
-  margin-bottom: 0;
-  padding: 0; 
-  text-align: center;
+#course-title {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: #1a252f;
-  padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
-  display: block;
-  color: var(--nav-link-color);
-  padding: 0.75rem 1rem;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-  background-color: var(--primary-color); 
-  text-decoration: none;
+    background-color: white;
+    color: #003366;
+    border-radius: 5px;
 }
 
-/* Main Layout */
+/* Main Content Layout (Grid) */
 main {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-  padding: 20px;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Card 01: About Me */
-.card-01 {
-  background-color: var(--card-background);
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  grid-column: 1;
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
 }
 
-.card-01 h2 {
-  background-color: var(--section-heading-background-card1);
-  color: var(--section-heading-color);
-  padding: 1rem;
-  font-size: 1.25rem;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+/* Card Styles */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
 }
 
-.story {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
+.card h2 {
+    text-align: center;
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
 }
 
-.story p {
-  padding: 0;
-  margin: 0;
-  line-height: 1.5;
+/* Specific About Me Card Layout (Flexbox) */
+.about-me-card .card-content-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.story img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.about-me-card img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
 }
 
-.nigeria {
-  padding: 20px;
-  border-top: 1px solid #ddd;
+.about-me-card .country-info {
+    margin-top: 1.5rem;
 }
 
-.nigeria h2 {
-  background-color: #1a252f;
-  color: #FFFFFF; 
-  padding: 1rem;
-  font-size: 1.25rem;
+.country-info h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 0.5rem;
 }
 
-.nigeria-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 20px;
-  padding: 20px;
-  background-color: var(--card-background);
+.country-info .country-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.flag-container {
-  text-align: center;
-  align-self: center;
+.country-info figure {
+    margin: 0;
+    text-align: center;
 }
 
-.flag {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 5px;
+.country-info figcaption {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 0.5rem;
 }
 
-.flag-label {
-  font-style: italic;
-  font-size: 0.8rem;
-  color: var(--flag-label-color); 
-  margin: 0;
+.country-info img {
+    max-width: 120px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.nigeria-content p {
-  padding: 0;
-  margin: 0;
-  line-height: 1.5;
+/* Web Dev Resources List */
+.web-dev-resources-card ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Card 02: Web Dev Resources */
-.card-02 {
-  background-color: var(--card-background);
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  grid-column: 2;
+.web-dev-resources-card a {
+    color: #003366;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.card-02 h2 {
-  background-color: var(--section-heading-background-card2);
-  color: var(--section-heading-color);
-  padding: 1rem;
-  font-size: 1.25rem;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+.web-dev-resources-card a:hover {
+    text-decoration: underline;
 }
 
-.card-02 ul {
-  list-style: none;
-  padding: 20px;
-  margin: 0;
-}
-
-.card-02 li {
-  margin-bottom: 10px;
-}
-
-/* Specific styling for links within Card 02 to ensure contrast on white background */
-.card-02 li a {
-  color: var(--link-color); 
-}
-
-.card-02 li a:hover {
-  color: var(--link-hover-color);
-}
-
-
-/* Footer */
+/* Footer Styles */
 footer {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 1.5rem 0;
-  background-color: var(--footer-background);
-  color: var(--footer-color);
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
 }
 
 footer p {
-  margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 15px;
-  }
-
-  .story {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .story img {
-    order: -1;
-  }
-
-  .nigeria-content {
-    grid-template-columns: 1fr;
-  }
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
 }

@@ -1,10 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const lastModified = document.getElementById("lastModified");
-  if (lastModified) {
-    lastModified.textContent = "Last Modification: " + document.lastModified;
-  }
-  const currentYear = document.getElementById("currentyear");
-  if (currentYear) {
-    currentYear.textContent = new Date().getFullYear(); // Sets to 2025
-  }
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentyear').textContent = currentYear;
+
+    // Get the last modified date
+    const lastModified = document.lastModified;
+    document.getElementById('lastModified').textContent = `Last Modification: ${lastModified}`;
 });
