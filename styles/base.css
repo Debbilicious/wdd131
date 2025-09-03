@@ -14,11 +14,10 @@ header {
     padding: 1rem 0;
 }
 
-#course-title {
-    display: block;
+header h1 {
+    margin: 0;
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 1rem;
 }
 
 nav {
@@ -26,7 +25,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     padding: 0;
-    margin: 0;
+    margin-top: 1rem;
 }
 
 nav a {
