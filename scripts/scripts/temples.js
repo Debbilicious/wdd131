@@ -1,23 +1,21 @@
-// Toggle hamburger menu (mobile)
-const menuBtn = document.getElementById('menu-btn');
-const nav = document.getElementById('primary-nav');
+document.addEventListener('DOMContentLoaded', () => {
+    const hamButton = document.querySelector('#menu');
+    const navigation = document.querySelector('.navigation');
+    const nameHeader = document.querySelector('.nameHeader'); // Select the h1 element
 
-menuBtn.addEventListener('click', () => {
-  const expanded = menuBtn.classList.toggle('open'); // toggles class for icon
-  nav.classList.toggle('open');                      // toggles nav visibility
-  // update aria attribute for accessibility
-  menuBtn.setAttribute('aria-expanded', String(expanded));
+    hamButton.addEventListener('click', () => {
+        navigation.classList.toggle('open');
+        hamButton.classList.toggle('open');
+        nameHeader.classList.toggle('hidden'); // Toggle the 'hidden' class
+    });
 });
 
-// Footer dynamic date info
-const yearSpan = document.getElementById('copyright-year');
-const lastModifiedSpan = document.getElementById('last-modified');
 
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
 
-if (lastModifiedSpan) {
-  // document.lastModified returns a string; format it if you like
-  lastModifiedSpan.textContent = document.lastModified;
-}
+// Footer information
+const currentYear = new Date().getFullYear();
+const lastModified = document.lastModified;
+const copyrightYearElement = document.getElementById('currentyear');
+const lastModifiedElement = document.getElementById('lastModified');
+copyrightYearElement.textContent = currentYear;
+lastModifiedElement.textContent = `Last update: ${lastModified}`;
