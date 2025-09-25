@@ -154,7 +154,8 @@ textarea {
 .rating-box label {
     color: var(--accent1-color-yinmn-blue);
     font-size: 2rem;
-    border-radius: 1px solid var(--primary-color-rich-black);
+    border: 1px solid var(--primary-color-rich-black);
+    border-radius: 4px;
 }
 
 .rating-box .clasificacion {
