@@ -1,0 +1,43 @@
+@media (min-width: 1024px) {
+
+  /* Header spacing */
+  header {
+    padding: 1.5rem 4rem;
+  }
+
+  nav ul {
+    gap: 3rem;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* center horizontally */
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero img.profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  p.tagline {
+    font-size: 1.4rem;
+  }
+
+  /* Featured Projects */
+  .projects-grid {
+    gap: 2rem;
+  }
+
+  .project-card img {
+    height: 220px;
+  }
+}
